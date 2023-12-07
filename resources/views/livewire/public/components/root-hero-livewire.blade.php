@@ -3,7 +3,7 @@
     <section class="flexslider">
 
         <ul class="slides">
-            @forelse ([] as $item)
+            @forelse ($hero as $item)
                 <li style="background-image: url({{ asset('assets/uploads/' . $item->image) }})" class="overlay">
                     <div class="container">
                         <div class="row">

@@ -35,6 +35,7 @@
     </div>
     @livewireScripts
 
+    <script src="{{ asset('dash/plugins/jquery/jquery.min.js') }}" ></script>
     <script src="{{ asset('dash/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('root/js/scripts.min.js') }}"></script>
     <script src="{{ asset('root/js/main.min.js') }}"></script>
