@@ -2,12 +2,14 @@
 
 namespace App\Livewire\Public\Components;
 
+use App\Models\Hero;
 use Livewire\Component;
 
 class RootHeroLivewire extends Component
 {
     public function render()
     {
-        return view('livewire.public.components.root-hero-livewire');
+        $hero = Hero::get();
+        return view('livewire.public.components.root-hero-livewire')->with('hero',$hero);
     }
 }
