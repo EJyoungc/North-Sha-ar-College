@@ -30,11 +30,11 @@ class RouteServiceProvider extends ServiceProvider
         });
 
         Livewire::setScriptRoute(function ($handle) {
-            return Route::get('/sc/livewire/livewire.js', $handle);
+            return Route::get('/livewire/livewire.js', $handle);
         });
-        Livewire::setUpdateRoute(function ($handle) {
-            return Route::post('/sc/livewire/update', $handle);
-        });
+        // Livewire::setUpdateRoute(function ($handle) {
+        //     return Route::post('/sc/livewire/update', $handle);
+        // });
 
         $this->routes(function () {
             Route::middleware('api')
