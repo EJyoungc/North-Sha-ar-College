@@ -1,0 +1,10 @@
+/* Your custom css code goes here */
+.text-white{
+    color: white !important;
+}
+.error{
+    color: red !important ;
+}
+.w-full{
+    width:100% !important;
+}
