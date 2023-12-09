@@ -5,8 +5,7 @@
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 text-center section-heading probootstrap-animate">
                     <h2>Our Featured Courses</h2>
-                    {{-- <p class="lead">Sed a repudiandae impedit voluptate nam Deleniti dignissimos perspiciatis nostrum
-                        porro nesciunt</p> --}}
+                    <p class="lead">Discover, Learn, Succeed: Explore Our Educational Spectrum</p>
                 </div>
             </div>
             <!-- END row -->

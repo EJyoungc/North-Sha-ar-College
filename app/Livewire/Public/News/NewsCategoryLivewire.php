@@ -25,7 +25,6 @@ class NewsCategoryLivewire extends Component
     public function render()
     {
 
-        
         $p = Post::where('category_id',$this->c->id)->paginate(6);
         return view('livewire.public.news.news-category-livewire')->with('posts',$p);
     }

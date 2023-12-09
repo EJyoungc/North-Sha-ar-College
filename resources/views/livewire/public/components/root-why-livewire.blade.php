@@ -1,14 +1,22 @@
 <div>
     {{-- Care about people's approval and you will be their prisoner. --}}
-    <section class="probootstrap-section">
+
+    <section class="probootstrap-section probootstrap-section-colored ">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 text-center section-heading probootstrap-animate">
-                    <h2>Why Choose lorem School</h2>
-                    {{-- <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui
-                        tempore natus quos quibusdam soluta at.</p> --}}
+                    <h2>Why Choose Our School</h2>
+                    <p class="lead">A Commitment to Excellence: What Sets Our School Apart</p>
                 </div>
             </div>
+
+        </div>
+    </section>
+
+
+    <section class="probootstrap-section  ">
+        <div class="container">
+            
             <div class="row">
 
                 @forelse ($whies as $item )

@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-left section-heading ">
-                    <h1>{{ $c->name }}</h1>
+                    <h1> News {{ $c->name }}</h1>
                 </div>
             </div>
         </div>
@@ -22,7 +22,8 @@
                                 alt="{{ $item->name }}" class="img-responsive"></figure>
                         <div class="probootstrap-text">
                             <h3 class="text-capitalize" >{{ $item->name }}</h3>
-                            <p>{{ Str::of(strip_tags($item->post))->limit(60) }}</p>
+                            <p>{{ Str::of(strip_tags($item->post))->limit(100) }}</p>
+                            <br><br><br>
                             <span class="probootstrap-date"><i class="icon-calendar"></i>{{ $item->getdate() }}</span>
                             {{-- <span class="probootstrap-location"><i class="icon-user2"></i>By Admin</span> --}}
                         </div>

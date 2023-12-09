@@ -1,16 +1,21 @@
 <div>
     {{-- The best athlete wants his opponent at his best. --}}
-    <section class="probootstrap-section">
+
+    <section
+        class="probootstrap-section probootstrap-section-colored probootstrap-bg probootstrap-custom-heading probootstrap-tab-section"
+        style="background-image: url(img/slider_2.jpg)">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-md-offset-3 text-center section-heading probootstrap-animate">
-                    <h2>Meet Our Qualified Staff</h2>
-                    {{-- <p class="lead">Sed a repudiandae impedit voluptate nam Deleniti dignissimos perspiciatis nostrum
-                        porro nesciunt</p> --}}
+                <div class="col-md-12 text-center section-heading probootstrap-animate">
+                    <h2 class="mb0">Meet Our Staff</h2>
+                    <p class="lead">People Power: Meet the Heart and Soul of Our Organization</p>
                 </div>
             </div>
-            <!-- END row -->
-
+        </div>
+    </section>   
+    <section class="probootstrap-section">
+        <div class="container">
+        
             <div class="row">
                 @forelse ($users as $item)
                 <div class="col-md-3 col-sm-6">

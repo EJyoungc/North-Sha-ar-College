@@ -22,7 +22,7 @@
                                 alt="{{ $item->name }}" class="img-responsive"></figure>
                         <div class="probootstrap-text">
                             <h3 class="text-capitalize" >{{ $item->name }}</h3>
-                            <p>{{ Str::of(strip_tags($item->post))->limit(60) }}</p>
+                            <p>{{ Str::of(strip_tags($item->post))->limit(100) }}</p>
                             <span class="probootstrap-date"><i class="icon-calendar"></i>{{ $item->getdate() }}</span>
                             {{-- <span class="probootstrap-location"><i class="icon-user2"></i>By Admin</span> --}}
                         </div>

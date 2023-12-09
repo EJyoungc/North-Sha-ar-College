@@ -7,6 +7,7 @@
             <div class="row">
                 <div class="col-md-12 text-center section-heading probootstrap-animate">
                     <h2 class="mb0">Highlights</h2>
+                    <p class="lead">Eventful Updates and Timely Posts Await You</p>
                 </div>
             </div>
         </div>

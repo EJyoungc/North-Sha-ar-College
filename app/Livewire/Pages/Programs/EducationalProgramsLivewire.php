@@ -25,25 +25,28 @@ class EducationalProgramsLivewire extends Component
     {
 
 
-        $this->validate([
-            'name' => 'required',
-            'image' => 'image',
-            'about' => 'required|string',
 
-        ]);
 
 
         if (!empty($this->id)) {
 
 
 
-            $ep = EducationalPrograms::find($this->id);
-            if (!empty($ep->image)) {
+           
+            if (!empty($this->image)) {
+                
+                $this->validate([
+                    'name' => 'required',
+                    'image' => 'image',
+                    'about' => 'required|string',
+
+                ]);
+                $ep = EducationalPrograms::find($this->id);
                 Storage::disk('custom')->delete($ep->image);
                 $file = $this->image->store('programs', 'custom');
                 $ep->name = $this->name;
                 $ep->about = $this->about;
-                $ep->slug = Str::slug($this->name, '-');     
+                $ep->slug = Str::slug($this->name, '-');
                 $ep->image = $file;
                 $ep->save();
 
@@ -51,22 +54,34 @@ class EducationalProgramsLivewire extends Component
                 $this->alert('success', 'updated');
             } else {
 
+                $this->validate([
+                    'name' => 'required',
+                    'about' => 'required|string',
+
+                ]);
+                $ep = EducationalPrograms::find($this->id);
+
                 $ep->name = $this->name;
                 $ep->about = $this->about;
-                $this->slug =Str::slug($this->name, '-');
+                $this->slug = Str::slug($this->name, '-');
                 $ep->save();
 
                 $this->cancel();
                 $this->alert('success', 'updated');
             }
         } else {
+            $this->validate([
+                'name' => 'required',
+                'image' => 'image',
+                'about' => 'required|string',
 
+            ]);
             $file = $this->image->store('programs', 'custom');
             EducationalPrograms::create([
                 'name' => $this->name,
-                'about'=>$this->about,
-                'slug'=>Str::slug($this->name, '-'),
-                'image'=>$file,
+                'about' => $this->about,
+                'slug' => Str::slug($this->name, '-'),
+                'image' => $file,
             ]);
 
             $this->cancel();
@@ -87,17 +102,15 @@ class EducationalProgramsLivewire extends Component
             $ep = EducationalPrograms::find($this->id);
             $this->name = $ep->name;
             $this->about = $ep->about;
-            
         } else {
             $this->modal = true;
         }
-
-        
     }
 
 
-    public function delete($id){
-        
+    public function delete($id)
+    {
+
         $ep = EducationalPrograms::find($id);
         Storage::disk('custom')->delete($ep->image);
         $ep->delete();
@@ -108,7 +121,7 @@ class EducationalProgramsLivewire extends Component
 
     public function cancel()
     {
-        $this->reset(['modal', 'name','about','image']);
+        $this->reset(['modal', 'name', 'about', 'image', 'id']);
     }
 
     public function render()

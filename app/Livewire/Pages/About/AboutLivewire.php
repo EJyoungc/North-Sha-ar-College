@@ -11,6 +11,7 @@ class AboutLivewire extends Component
     use LivewireAlert;
     public $about;
     
+    
 
     public function store(){
 

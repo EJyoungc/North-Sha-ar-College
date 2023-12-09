@@ -13,14 +13,16 @@ return new class extends Migration
     {
         Schema::create('footers', function (Blueprint $table) {
             $table->id();
-            $table->string('about')->nullable();
+            $table->text('about')->nullable();
             $table->string('x_link')->nullable();
             $table->string('facebook_link')->nullable();
             $table->string('linkedin_link')->nullable();
+            $table->string('video_link')->nullable();
             $table->string('youtube_link')->nullable();
             $table->string('contact_address')->nullable();
             $table->string('contact_email')->nullable();
             $table->string('contact_mobile')->nullable();
+            $table->string('video_link')->nullable();
             $table->timestamps();
         });
     }
