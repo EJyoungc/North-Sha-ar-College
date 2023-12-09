@@ -28,15 +28,14 @@
         {{-- @livewire('public.include.nav-top-liverwire') --}}
         @livewire('public.include.nav-top-livewire')
 
-        {{ $slot }}
-
+        @yield('content')
 
         @livewire('public.include.nav-bottom-livewire')
     </div>
     @livewireScripts
 
-    <script src="{{ asset('dash/plugins/jquery/jquery.min.js') }}" ></script>
-    <script src="{{ asset('dash/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+    {{-- <script src="{{ asset('dash/plugins/jquery/jquery.min.js') }}" ></script>
+    <script src="{{ asset('dash/plugins/bootstrap/js/bootstrap.min.js') }}"></script> --}}
     <script src="{{ asset('js/scripts.min.js') }}"></script>
     <script src="{{ asset('js/main.min.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>

@@ -1,0 +1,25 @@
+/* Your custom css code goes here */
+.text-white {
+    color: white !important;
+}
+
+.error {
+    color: red !important;
+}
+
+.w-full {
+    width: 100% !important;
+}
+
+
+.page-link {
+
+    padding: 6px !important;
+    width: 33px !important;
+    background-color: white !important;
+    color: black !important;
+    margin-right: 5px !important;
+    border-color: gray;
+
+
+}

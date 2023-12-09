@@ -16,8 +16,8 @@
 
             <div class="row">
                 @foreach($posts as $item)
-                <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
-                    <a href="#" class="probootstrap-featured-news-box">
+                <div class="col-md-4 col-sm-12 col-xs-12 col-xxs-12 probootstrap-animate">
+                    <a href="{{ route('root.news.show',$item->slug) }}" class="probootstrap-featured-news-box">
                         <figure class="probootstrap-media"><img src="{{ asset('assets/uploads/'.$item->image) }}"
                                 alt="{{ $item->name }}" class="img-responsive"></figure>
                         <div class="probootstrap-text">
@@ -35,6 +35,11 @@
 
                 
 
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    {{ $posts->links() }}      
+                </div> 
             </div>
 
         </div>

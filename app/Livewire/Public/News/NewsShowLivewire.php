@@ -2,6 +2,8 @@
 
 namespace App\Livewire\Public\News;
 
+use App\Models\Category;
+use App\Models\Post;
 use Livewire\Component;
 use Livewire\Attributes\Layout;
 
@@ -9,9 +11,27 @@ use Livewire\Attributes\Layout;
 class NewsShowLivewire extends Component
 {
 
-    #[Layout('layouts.root')] 
+    #[Layout('layouts.root')]
+
+    public $p;
+
+    public function mount($slug){
+
+
+        $this->p = Post::where('slug',$slug)->first();
+
+    }
+
+
+    
+
+
+
     public function render()
     {
-        return view('livewire.public.news.news-show-livewire');
+
+        $c = Category::get();
+
+        return view('livewire.public.news.news-show-livewire')->with('categories',$c);
     }
 }

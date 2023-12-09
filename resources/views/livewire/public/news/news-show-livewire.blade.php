@@ -4,92 +4,58 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12 text-left section-heading probootstrap-animate">
-              <h1>News</h1>
+              <h1 class="text-capitalize" >{{ $p->name }}</h1>
             </div>
           </div>
         </div>
       </section>
 
-
-      <section class="probootstrap-section">
+      <section class="probootstrap-section probootstrap-section-sm">
         <div class="container">
-
           <div class="row">
-            <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
-              <a href="#" class="probootstrap-featured-news-box">
-                <figure class="probootstrap-media"><img src="img/img_sm_1.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
-                <div class="probootstrap-text">
-                  <h3>Tempora consectetur unde nisi</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, quaerat?</p>
-                  <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
-                  <span class="probootstrap-location"><i class="icon-user2"></i>By Admin</span>
-                </div>
-              </a>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
-              <a href="#" class="probootstrap-featured-news-box">
-                <figure class="probootstrap-media"><img src="img/img_sm_2.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
-                <div class="probootstrap-text">
-                  <h3>Tempora consectetur unde nisi</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, unde?</p>
-                  <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
-                  <span class="probootstrap-location"><i class="icon-user2"></i>By Admin</span>
-                </div>
-              </a>
-            </div>
-            <div class="clearfix visible-sm-block visible-xs-block"></div>
-            <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
-              <a href="#" class="probootstrap-featured-news-box">
-                <figure class="probootstrap-media"><img src="img/img_sm_3.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
-                <div class="probootstrap-text">
-                  <h3>Tempora consectetur unde nisi</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, possimus!</p>
-                  <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
-                  <span class="probootstrap-location"><i class="icon-user2"></i>By Admin</span>
-                </div>
-              </a>
-            </div>
+            <div class="col-md-12">
+              <div class="row probootstrap-gutter0">
+                <div class="col-md-4" id="probootstrap-sidebar">
+                  <div class="probootstrap-sidebar-inner probootstrap-overlap probootstrap-animate">
+                    <h3>Categories</h3>
+                    <ul class="probootstrap-side-menu">
 
-            <div class="clearfix visible-md-block"></div>
 
-            <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
-              <a href="#" class="probootstrap-featured-news-box">
-                <figure class="probootstrap-media"><img src="img/img_sm_1.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
-                <div class="probootstrap-text">
-                  <h3>Tempora consectetur unde nisi</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, sunt!</p>
-                  <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
-                  <span class="probootstrap-location"><i class="icon-user2"></i>By Admin</span>
+                      @foreach ($categories as $item)
+                      <li><a href="{{ route('root.news.category',$item->slug) }}">{{ $item->name }}</a></li>
+                      @endforeach
+                      {{-- <li class="active"><a>Chemical Engineering</a></li> --}}
+                      
+                      
+                    </ul>
+                  </div>
                 </div>
-              </a>
-            </div>
-            <div class="clearfix visible-sm-block visible-xs-block"></div>
-            <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
-              <a href="#" class="probootstrap-featured-news-box">
-                <figure class="probootstrap-media"><img src="img/img_sm_2.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
-                <div class="probootstrap-text">
-                  <h3>Tempora consectetur unde nisi</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, voluptatem.</p>
-                  <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
-                  <span class="probootstrap-location"><i class="icon-user2"></i>By Admin</span>
-                </div>
-              </a>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
-              <a href="#" class="probootstrap-featured-news-box">
-                <figure class="probootstrap-media"><img src="img/img_sm_3.jpg" alt="Free Bootstrap Template by ProBootstrap.com" class="img-responsive"></figure>
-                <div class="probootstrap-text">
-                  <h3>Tempora consectetur unde nisi</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, magnam.</p>
-                  <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
-                  <span class="probootstrap-location"><i class="icon-user2"></i>By Admin</span>
-                </div>
-              </a>
-            </div>
-            <div class="clearfix visible-sm-block visible-xs-block"></div>
+                <div class="col-md-7 col-md-push-1  probootstrap-animate" id="probootstrap-content">
+                  <h1 class="text-capitalize" >{{ $p->name }}</h1>
 
+                  <p>{!! $p->post !!}</p>
+                  
+                  <p>
+                    {{-- <a href="#" class="btn btn-primary">Enroll with this course now</a> <span class="enrolled-count">2,928 students enrolled</span> --}}
+
+
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-
         </div>
       </section>
+      
+      <section class="probootstrap-cta">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h2 class="probootstrap-animate" data-animate-effect="fadeInRight">Get your admission now!</h2>
+              <a href="#" role="button" class="btn btn-primary btn-lg btn-ghost probootstrap-animate" data-animate-effect="fadeInLeft">Enroll</a>
+            </div>
+          </div>
+        </div>
+      </section>
+ 
 </div>
