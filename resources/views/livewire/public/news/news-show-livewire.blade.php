@@ -31,6 +31,7 @@
                   </div>
                 </div>
                 <div class="col-md-7 col-md-push-1  probootstrap-animate" id="probootstrap-content">
+                  <img src="{{ asset('assets/uploads/'.$p->image) }}" alt="">
                   <h1 class="text-capitalize" >{{ $p->name }}</h1>
 
                   <p>{!! $p->post !!}</p>
