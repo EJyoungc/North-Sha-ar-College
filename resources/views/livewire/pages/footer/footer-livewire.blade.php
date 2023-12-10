@@ -44,11 +44,11 @@
                                 <input type="text" class="form-control" wire:model.blur='linkedin_link'>
                                 <x-error for="linkedin_link" />
                             </div>
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <label for="">Video link</label>
                                 <input type="text" class="form-control" wire:model.blur='video_link'>
                                 <x-error for="video_link" />
-                            </div>
+                            </div> --}}
                             <div class="form-group">
                                 <label for="">Contact address </label>
                                 <input type="text" class="form-control" wire:model.blur='contact_address'>
