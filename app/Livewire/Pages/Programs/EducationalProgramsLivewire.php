@@ -8,6 +8,7 @@ use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Str;
+use Image;
 
 class EducationalProgramsLivewire extends Component
 {
@@ -44,6 +45,8 @@ class EducationalProgramsLivewire extends Component
                 $ep = EducationalPrograms::find($this->id);
                 Storage::disk('custom')->delete($ep->image);
                 $file = $this->image->store('programs', 'custom');
+                $img = Image::make(public_path('assets/uploads/' . $file))->fit(400, 400);
+                $img->save();
                 $ep->name = $this->name;
                 $ep->about = $this->about;
                 $ep->slug = Str::slug($this->name, '-');
@@ -77,6 +80,8 @@ class EducationalProgramsLivewire extends Component
 
             ]);
             $file = $this->image->store('programs', 'custom');
+            $img = Image::make(public_path('assets/uploads/' . $file))->fit(400, 400);
+            $img->save();
             EducationalPrograms::create([
                 'name' => $this->name,
                 'about' => $this->about,

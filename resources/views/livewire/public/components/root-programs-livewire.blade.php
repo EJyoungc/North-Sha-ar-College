@@ -9,26 +9,42 @@
                 </div>
             </div>
             <!-- END row -->
+
             <div class="row">
                 @foreach ($programs as $item)
-                <div class="col-md-6">
-                    <div class="probootstrap-service-2 probootstrap-animate">
-                        <div class="image">
-                            <div class="image-bg">
-                                <img src="{{ asset('assets/uploads/'.$item->image) }}" alt="Free Bootstrap Template by ProBootstrap.com">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <img class="card-img-top" src="{{ asset('assets/uploads/' . $item->image) }}" alt="">
+                            <div class="card-body">
+                                <h4 class="card-title">{{ $item->name }}</h4>
+                                <p class="card-text">{{ $item->about }}</p>
                             </div>
                         </div>
-                        <div class="text">
-                            {{-- <span class="probootstrap-meta"><i class="icon-calendar2"></i> July 10, 2017</span> --}}
-                            <h3>{{ $item->name }}</h3>
-                            <p>{{ str::of($item->about)->limit(50) }}</p>
-                            <p><a href="{{ route('root.enroll') }}" class="btn btn-primary">Enroll now</a> </p>
+
+                    </div>
+                @endforeach
+            </div>
+            <div class="row">
+                @foreach ($programs as $item)
+                    <div class="col-md-6">
+                        <div class="probootstrap-service-2 probootstrap-animate">
+                            <div class="image">
+                                <div class="image-bg">
+                                    <img src="{{ asset('assets/uploads/' . $item->image) }}"
+                                        alt="Free Bootstrap Template by ProBootstrap.com">
+                                </div>
+                            </div>
+                            <div class="text">
+                                {{-- <span class="probootstrap-meta"><i class="icon-calendar2"></i> July 10, 2017</span> --}}
+                                <h3>{{ $item->name }}</h3>
+                                <p>{{ str::of($item->about)->limit(50) }}</p>
+                                <p><a href="{{ route('root.enroll') }}" class="btn btn-primary">Enroll now</a> </p>
+                            </div>
                         </div>
                     </div>
-                </div> 
                 @endforeach
-                
-                
+
+
             </div>
         </div>
     </section>
