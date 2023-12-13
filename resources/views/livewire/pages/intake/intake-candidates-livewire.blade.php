@@ -47,7 +47,7 @@
                                             <ul class="" >
                                                 @foreach ($programs as $item )
                                                     <li class="text-primary" >
-                                                        {{ $item->education }}
+                                                        {{ $item->education->name }}
                                                     </li>
                                                 @endforeach
                                             </ul>
