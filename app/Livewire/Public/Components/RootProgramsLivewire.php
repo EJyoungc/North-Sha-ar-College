@@ -11,6 +11,6 @@ class RootProgramsLivewire extends Component
     {
         $p = EducationalPrograms::latest()->limit(4)->get();
         $pc = $p->chunk(2);
-        return view('livewire.public.components.root-programs-livewire')->with('grouped_programs',compact($pc));
+        return view('livewire.public.components.root-programs-livewire')->with('grouped_programs',$pc);
     }
 }
