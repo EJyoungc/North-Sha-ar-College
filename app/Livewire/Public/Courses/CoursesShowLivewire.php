@@ -13,8 +13,8 @@ class CoursesShowLivewire extends Component
     
     public $ep;
     public function mount($slug){
-        $this->ep  = EducationalPrograms::where('slug',$slug)->get();
-    
+        $this->ep  = EducationalPrograms::where('slug',$slug)->first();
+        
     }
 
 
