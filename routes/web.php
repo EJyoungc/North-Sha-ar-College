@@ -20,6 +20,7 @@ use App\Livewire\Pages\Users\UsersLivewire;
 use App\Livewire\Pages\Whys\WhysLivewire;
 use App\Livewire\Public\About\AboutLivewire as AboutAboutLivewire;
 use App\Livewire\Public\Courses\CoursesLivewire;
+use App\Livewire\Public\Courses\CoursesShowLivewire;
 use App\Livewire\Public\Enroll\EnrollLivewire;
 use App\Livewire\Public\News\NewsCategoryLivewire;
 use App\Livewire\Public\News\NewsLivewire;
@@ -47,6 +48,7 @@ Route::get('/news',NewsLivewire::class)->name('root.news');
 Route::get('/news/{slug}',NewsShowLivewire::class)->name('root.news.show');
 Route::get('/news/category/{slug}',NewsCategoryLivewire::class)->name('root.news.category');
 Route::get('/courses',CoursesLivewire::class)->name('root.courses');
+Route::get('/courses/{slug}',CoursesShowLivewire::class)->name('root.courses.show');
 Route::get('/staff',TeachersLivewire::class)->name('root.staff');
 Route::get('about',AboutAboutLivewire::class)->name('root.about');
 // Route::get('/test',function(){
