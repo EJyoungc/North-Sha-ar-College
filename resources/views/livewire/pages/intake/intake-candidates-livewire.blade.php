@@ -152,7 +152,7 @@
                                                             href="#">view details</a>
                                                         <a class="dropdown-item"
                                                             wire:click="approve_toggle({{ $item->id }})"
-                                                            href="#">{{ $item->status == 'approved' ? 'Approve' : 'Disapprove' }}</a>
+                                                            href="#">{{ $item->status == 'approved' ? 'Disapprove' : 'Approve' }}</a>
                                                     </div>
                                                 </td>
                                             </tr>
