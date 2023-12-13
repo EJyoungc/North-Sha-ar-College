@@ -24,8 +24,8 @@ class IntakeCandidatesLivewire extends Component
     public function info($id)
     {
         $this->candidate =  IntakeCandidates::find($id);
-        $this->programs = CandidateProgram::where('intake_candidate_id',$this->candidate->id)->get();
-        // dd($this->programs);
+        $this->programs = CandidateProgram::join('educational_programs','educational_programs.id','=','candidates_programs.educational_programs_id')->where('intake_candidate_id',$this->candidate->id)->get();
+        dd($this->programs);
         $this->modal = true;
     }
 
