@@ -9,9 +9,8 @@
                 </div>
             </div>
             <!-- END row -->
-
-         
-            <div class="row">
+            @foreach ($grouped_programs as $programs)
+                <div class="row">
                 @foreach ($programs as $item)
                     <div class="col-md-6">
                         <div class="probootstrap-service-2 probootstrap-animate">
@@ -33,6 +32,9 @@
 
 
             </div>
+            @endforeach
+         
+            
         </div>
     </section>
 </div>
