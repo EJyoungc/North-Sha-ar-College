@@ -14,6 +14,7 @@ class IntakeCandidatesLivewire extends Component
     public $modal = false;
     public $candidate;
     public $subjects;
+    public $programs = [];
 
 
     public function cancel(){
@@ -24,6 +25,7 @@ class IntakeCandidatesLivewire extends Component
     {
         $this->candidate =  IntakeCandidates::find($id);
         $this->programs = CandidateProgram::where('intake_candidate_id',$this->candidate->id)->get();
+        dd($this->programs);
         $this->modal = true;
     }
 
