@@ -18,42 +18,32 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-12 col-lg-3">
-                    <div class="card bg-info">
-                        <div class="card-body">
-
-                            <h4> <i class="fa fa-at" aria-hidden="true"></i>
-                                 {{-- {{ $subscribers->count() }} --}}
-                                </h4>
-                            <h5>Subscribers</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-3">
+                
+                <div class="col-12 col-lg-4">
                     <div class="card bg-success">
                         <div class="card-body">
                             <h4> <i class="fa fa-coffee" aria-hidden="true"></i>
-                                 {{-- {{ $posts->count() }}  --}}
+                                 {{ $posts->count() }} 
                                 </h4>
                             <h5>Posts</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-3">
+                <div class="col-12 col-lg-4">
                     <div class="card bg-secondary">
                         <div class="card-body">
                             <h4><i class="fas fa-users"></i> 
-                                {{-- {{ $cohort->count() }} --}}
+                                {{ $intake->count() }}
                             </h4>
-                            <h5>Cohort</h5>
+                            <h5>Intake</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-3">
+                <div class="col-12 col-lg-4">
                     <div class="card ">
                         <div class="card-body">
                             <h4> <i class="fa fa-user" aria-hidden="true"></i> 
-                                {{-- {{ $users->count() }} --}}
+                                {{ $users->count() }}
                             </h4>
                             <h5>Users</h5>
                         </div>

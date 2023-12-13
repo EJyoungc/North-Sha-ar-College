@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Pages\Dashboard;
 
+use App\Models\Intake;
 use App\Models\Post;
 use App\Models\StemCandidate;
 use App\Models\StemCohort;
@@ -14,7 +15,7 @@ class DashboardLivewire extends Component
 {
 
 
-    public $posts, $subscribers =[], $cohort=[], $users, $candidates=[], $topviews=[], $confirmed=[], $completed=[],$ccomp=[],$ccon=[],$conreg=[],$months=[];
+    public $posts, $subscribers =[], $intake=[], $users, $candidates=[], $topviews=[], $confirmed=[], $completed=[],$ccomp=[],$ccon=[],$conreg=[],$months=[];
 
     public $year;
 
@@ -31,7 +32,7 @@ class DashboardLivewire extends Component
     {
         // dd('hello');
         $this->users = User::all();
-        
+        $this->intake = Intake::get();
         $this->posts = Post::with('category')->get();
         $this->topviews = Post::with('category')->limit(10)->orderBy('view', 'desc')->get();
         
