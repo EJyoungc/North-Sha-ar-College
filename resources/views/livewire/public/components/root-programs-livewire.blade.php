@@ -24,7 +24,7 @@
                                 {{-- <span class="probootstrap-meta"><i class="icon-calendar2"></i> July 10, 2017</span> --}}
                                 <h3>{{ $item->name }}</h3>
                                 <p>{{ str::of($item->about)->limit(50) }}</p>
-                                <p><a href="{{ route('root.courses', $item->slug) }}" class="btn btn-primary">More</a> </p>
+                                <p><a href="{{ route('root.courses.show', $item->slug) }}" class="btn btn-primary">More</a> </p>
                             </div>
                         </div>
                     </div>
