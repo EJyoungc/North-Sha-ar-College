@@ -16,6 +16,7 @@ class CandidateProgram extends Model
 
     ];
     public function education(){
-        return $this->belongsTo(EducationalPrograms::class,'educational_program_id');
+        // return $this->belongsTo(EducationalPrograms::class,'educational_program_id');
+        return $this->belongsTo(EducationalPrograms::class);
     }
 }
