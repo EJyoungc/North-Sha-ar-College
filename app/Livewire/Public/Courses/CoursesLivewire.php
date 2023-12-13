@@ -13,10 +13,6 @@ class CoursesLivewire extends Component
     #[Layout('layouts.root')] 
 
     
-
-
-
-
     public function render()
     {   
         $c = EducationalPrograms::get();
