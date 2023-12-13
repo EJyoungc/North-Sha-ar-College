@@ -43,13 +43,15 @@
                                         <li>Next of Kin Email : {{ $candidate->next_of_kin_email }}</li>
                                         <li>
                                             Programs Selected <br>
+                                            @if(!empty($programs))
                                             <ul class="" >
-                                                @foreach ($candidate->programs as $item )
+                                                @foreach ($programs as $item )
                                                     <li class="text-primary" >
                                                         {{ $item->education->name }}
                                                     </li>
                                                 @endforeach
                                             </ul>
+                                            @endif
                                         </li>
                                         <li>Education Type : {{ $candidate->educational_type }}</li>
 

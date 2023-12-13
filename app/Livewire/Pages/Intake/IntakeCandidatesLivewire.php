@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Pages\Intake;
 
+use App\Models\CandidateProgram;
 use App\Models\IntakeCandidates;
 use Livewire\Component;
 
@@ -22,6 +23,7 @@ class IntakeCandidatesLivewire extends Component
     public function info($id)
     {
         $this->candidate =  IntakeCandidates::find($id);
+        $this->programs = CandidateProgram::where('intake_candidate_id',$this->candidate->id)->get();
         $this->modal = true;
     }
 
