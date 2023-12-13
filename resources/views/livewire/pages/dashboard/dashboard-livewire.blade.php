@@ -51,30 +51,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12  col-lg-6">
-                    <!-- Default box -->
-
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">Cohort Candidate Stats</div>
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse"
-                                    title="Collapse">
-                                    <i class="fas fa-minus"></i>
-                                </button>
-                                {{-- <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                                    <i class="fas fa-times"></i>
-                                </button> --}}
-                            </div>
-                        </div>
-                        <div class="card-body p-0">
-                            <canvas id="donutChart"
-                                style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                        </div>
-                    </div>
-                    <!-- /.card -->
-                </div>
-                <div class="col-12  col-lg-6">
+                
+                <div class="col-12  col-lg-12">
                     <!-- Default box -->
 
                     <div class="card">
@@ -125,43 +103,6 @@
                     <!-- /.card -->
                 </div>
 
-                <div class="col-12  col-lg-12">
-                    <!-- Default box -->
-
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">Cohort Candidate Stats</div>
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse"
-                                    title="Collapse">
-                                    <i class="fas fa-minus"></i>
-                                </button>
-                                {{-- <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                                    <i class="fas fa-times"></i>
-                                </button> --}}
-                            </div>
-                        </div>
-                        <div class="card-body p-0">
-                            <div class="d-flex justify-content-end">
-                                
-                                    <div class="form-group pt-2 px-2">
-                                        <select wire:model.live='year' disabled class="form-control">
-                                        
-                                            @for ($y = date('Y'); $y >= 2000; $y--) <!-- Adjust the range as needed -->
-                                                <option value="{{ $y }}">{{ $y }}</option>
-                                            @endfor
-                                        </select>
-                                    </div>
-                                
-                            </div>
-
-                           
-                            <canvas wire:ignore id="barChart"
-                                style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                        </div>
-                    </div>
-                    <!-- /.card -->
-                </div>
             </div>
         </div>
         {{-- @section('chart')
