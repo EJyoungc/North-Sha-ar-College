@@ -10,20 +10,7 @@
             </div>
             <!-- END row -->
 
-            <div class="row">
-                @foreach ($programs as $item)
-                    <div class="col-md-6">
-                        <div class="card">
-                            <img class="card-img-top" src="{{ asset('assets/uploads/' . $item->image) }}" alt="">
-                            <div class="card-body">
-                                <h4 class="card-title">{{ $item->name }}</h4>
-                                <p class="card-text">{{ $item->about }}</p>
-                            </div>
-                        </div>
-
-                    </div>
-                @endforeach
-            </div>
+         
             <div class="row">
                 @foreach ($programs as $item)
                     <div class="col-md-6">
