@@ -4,11 +4,14 @@ namespace App\Livewire\Pages\Intake;
 
 use App\Models\CandidateProgram;
 use App\Models\IntakeCandidates;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 
 class IntakeCandidatesLivewire extends Component
 {
 
+
+    use LivewireAlert;
 
     public $intake_id;
     public $modal = false;
