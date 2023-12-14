@@ -52,7 +52,16 @@ class UsersLivewire extends Component
 
     public function pass_reset($id = null){
 
-        
+        if(!empty($id)){
+
+            $u = User::find($id);
+            $u->password = "AA123!";
+            $u->save();
+
+            $this->alert('success','resetted');
+            $this->cancel();
+
+        }
 
     }
 
