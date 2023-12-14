@@ -49,13 +49,16 @@ class UsersLivewire extends Component
         $users->email =$this->email;
         $users->password =$this->password;
         $users->store();
+        
+        $this->alert('users','success');
+        $this->cancel();
 
 
 
     }
     public function cancel()
     {
-        $this->reset(['role_modal', 'role']);
+        $this->reset(['role_modal', 'role','password','name','email']);
     }
     public function store_role()
     {

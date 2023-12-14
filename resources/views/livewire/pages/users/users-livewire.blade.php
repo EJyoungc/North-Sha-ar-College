@@ -23,6 +23,33 @@
                                     </div>
                                     <div class="form-group">
                                         <button wire:click.prevent='create' class="btn btn-primary">add</button>
+                                        <x-modal :status="$create_modal" title="Add User">
+
+                                            <form wire:submit='store'>
+            
+                                                <div class="form-group">
+                                                    <label for="">Name</label>
+                                                    <input type="text" wire:model='name'>
+                                                    <x-error for="name" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="">Email</label>
+                                                    <input type="email" wire:model='email'>
+                                                    <x-error for="email" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="">Password</label>
+                                                    <input type="text" wire:model='password'>
+                                                    <x-error for="password" />
+                                                </div>
+            
+                                                <button  class="btn btn-dark" >Store <x-spinner target="store"> save</button>
+            
+            
+            
+                                            </form>
+            
+                                        </x-modal>
                                     </div>
                                 </div>
                             </div>
@@ -131,33 +158,7 @@
                             </div>
                             {{-- modal --}}
 
-                            <x-modal :status="$create_modal" title="Add User">
-
-                                <form wire:submit='store'>
-
-                                    <div class="form-group">
-                                        <label for="">Name</label>
-                                        <input type="text" wire:model='name'>
-                                        <x-error for="name" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="">Email</label>
-                                        <input type="email" wire:model='email'>
-                                        <x-error for="email" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="">Password</label>
-                                        <input type="text" wire:model='password'>
-                                        <x-error for="password" />
-                                    </div>
-
-                                    <button  class="btn btn-dark" >Store <x-spinner target="store"> save</button>
-
-
-
-                                </form>
-
-                            </x-modal>
+                           
                         </div>
                     </div>
                 </div>
