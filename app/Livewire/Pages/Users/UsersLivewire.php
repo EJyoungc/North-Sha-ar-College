@@ -48,7 +48,7 @@ class UsersLivewire extends Component
         $users->name =$this->name;
         $users->email =$this->email;
         $users->password =$this->password;
-        $users->store();
+        $users->save();
         
         $this->alert('users','success');
         $this->cancel();
