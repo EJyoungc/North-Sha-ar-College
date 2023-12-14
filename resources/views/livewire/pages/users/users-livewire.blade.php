@@ -42,10 +42,6 @@
                                                     <x-error for="password" />
                                                 </div>
 
-                                                <button type="submit" class="btn btn-primary" >save</button>
-
-
-
                                                     <button type="submit" class="btn btn-dark" >save <x-spinner target="save" /> </button>
                                             </form>
 

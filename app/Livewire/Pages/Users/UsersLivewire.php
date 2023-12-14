@@ -21,7 +21,7 @@ class UsersLivewire extends Component
 
     public $name;
     public $email;
-    public $password;
+    public $password  = "AA123!";
 
     public $search;
 
