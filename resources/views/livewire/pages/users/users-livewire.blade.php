@@ -22,7 +22,7 @@
                                     </div>
                                     <div class="form-group">
                                         <button class="btn btn-primary">add <x-spinner target="create" /> </button>
-                                        <x-modal status="$create_modal" title="add user" >
+                                        <x-modal :status="$create_modal" title="add user" >
 
                                             <form wire:submit>
                                                 <div class="form-group">
