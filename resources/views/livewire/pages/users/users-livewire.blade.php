@@ -16,7 +16,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex justify-content-end ">
-                                <div class="col-lg-3">
+                                <div class="col-lg-3 d-flex">
                                     <div class="form-group">
                                         <input type="text" wire:model="search" class="form-control" placeholder="search">
                                     </div>
@@ -51,6 +51,8 @@
 
 
                                         </x-modal>
+                                    </div>
+                                       
                                     </div>
                                 </div>
                             </div>
