@@ -99,14 +99,7 @@ class UsersLivewire extends Component
             $this->alert('success','success');
             $this->cancel();
 
-
-
         }
-
-
-        
-
-
 
     }
     public function cancel()
