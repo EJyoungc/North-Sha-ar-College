@@ -50,7 +50,7 @@ class UsersLivewire extends Component
         $users->password =$this->password;
         $users->save();
         
-        $this->alert('users','success');
+        $this->alert('success','success');
         $this->cancel();
 
 
