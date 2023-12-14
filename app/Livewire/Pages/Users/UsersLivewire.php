@@ -102,7 +102,7 @@ class UsersLivewire extends Component
     }
     public function cancel()
     {
-        $this->reset(['role_modal', 'role','password','name','email']);
+        $this->reset(['role_modal','create_modal', 'uid', 'role','password','name','email']);
     }
     public function store_role()
     {
