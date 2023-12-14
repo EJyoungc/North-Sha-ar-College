@@ -21,8 +21,8 @@
                                         <input type="text" wire:model="search" class="form-control" placeholder="search">
                                     </div>
                                     <div class="form-group">
-                                        <button class="btn btn-primary">add <x-spinner target="create" /> </button>
-                                        <x-modal :status="$create_modal" title="add user" >
+                                        <button class="btn btn-primary" wire:click='create'>add <x-spinner target="create" /> </button>
+                                        <x-modal :status="$create_modal" title="add user" > 
 
                                             <form wire:submit>
                                                 <div class="form-group">
