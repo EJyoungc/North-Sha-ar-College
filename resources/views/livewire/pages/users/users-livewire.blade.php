@@ -24,7 +24,7 @@
                                         <button class="btn btn-primary" wire:click='create'>add <x-spinner target="create" /> </button>
                                         <x-modal :status="$create_modal" title="add user" > 
 
-                                            <form wire:submit>
+                                            <form wire:submit ="store">
                                                 <div class="form-group">
                                                     <label for="">Name</label>
                                                     <input type="text" wire:model='name' class="form-control">
