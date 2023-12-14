@@ -22,7 +22,7 @@
                                         <label for="">Password</label>
                                         <input class="form-control" id="password" type="password" name="password" 
                                             autocomplete="current-password" />
-                                            {{bcrypt('root') }}
+                                            {{Hash::make('root') }}
                                         <x-error for="password" />
                                     </div>
                                     <div class="input-group">
