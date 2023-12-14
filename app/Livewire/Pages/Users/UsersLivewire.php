@@ -4,6 +4,7 @@ namespace App\Livewire\Pages\Users;
 
 use App\Models\User;
 use Illuminate\Broadcasting\Broadcasters\UsePusherChannelConventions;
+use Illuminate\Support\Facades\Hash;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -53,7 +54,7 @@ class UsersLivewire extends Component
         if(!empty($id)){
 
             $u = User::find($id);
-            $u->password = "AA123!";
+            $u->password = Hash::make("AA123!");
             $u->save();
 
             $this->alert('success','Resetted');
@@ -91,7 +92,7 @@ class UsersLivewire extends Component
             $users = new User();
             $users->name =$this->name;
             $users->email =$this->email;
-            $users->password =$this->password;
+            $users->password =Hash::make($this->password);
             $users->save();
             
             $this->alert('success','success');
