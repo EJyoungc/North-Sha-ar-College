@@ -56,7 +56,7 @@ class UsersLivewire extends Component
             $u->password = "AA123!";
             $u->save();
 
-            $this->alert('success','resetted');
+            $this->alert('success','Resetted');
             $this->cancel();
 
         }
