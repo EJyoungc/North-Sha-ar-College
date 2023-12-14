@@ -27,8 +27,22 @@
                                             <form wire:submit>
                                                 <div class="form-group">
                                                     <label for="">Name</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" wire:model='name' class="form-control">
+                                                    <x-error for="name" />
                                                 </div>
+                                                <div class="form-group">
+                                                    <label for="">Email</label>
+                                                    <input type="text" wire:model='email' class="form-control">
+                                                    <x-error for="email" />
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="">Password</label>
+                                                    <input type="text" wire:model='password' class="form-control">
+                                                    <x-error for="password" />
+                                                </div>
+
+                                                <button type="submit" class="btn btn-primary" >save</button>
 
 
 
