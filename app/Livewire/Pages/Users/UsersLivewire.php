@@ -22,9 +22,7 @@ class UsersLivewire extends Component
     public $name;
     public $email;
     public $password  = "AA123!";
-
     public $search;
-
     protected $queryString = ['search'];
 
     public function change_role($id)

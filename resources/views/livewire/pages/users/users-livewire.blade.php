@@ -97,6 +97,9 @@
                                                             <a class="dropdown-item" href="#"
                                                                 wire:click.prevent='change_role({{ $item->id }})'>Change
                                                                 Role</a>
+                                                                <a class="dropdown-item" href="#"
+                                                                wire:click.prevent='pass_reset({{ $item->id }})'>
+                                                                Reset Password</a>
                                                             <a class="dropdown-item"
                                                                 wire:click.prevent='change_status({{ $item->id }})'
                                                                 href="#">{{ $item->status ? "Deactivate" :"Activate" }}
