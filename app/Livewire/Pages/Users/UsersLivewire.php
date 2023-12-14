@@ -18,7 +18,7 @@ class UsersLivewire extends Component
     public $create_modal = false;
     public $user;
     public $role;
-
+    public $uid;
     public $name;
     public $email;
     public $password  = "AA123!";
@@ -33,25 +33,69 @@ class UsersLivewire extends Component
         $this->role_modal = true;
     }
 
-    public function create(){
+    public function create($id=null){
+
+        if(!empty($id)){
+        $this->uid = User::find($id);
+        $this->name = $this->uid->name;
+        $this->email = $this->uid->email;
+       
         $this->create_modal = true;
+
+        }else{
+
+        $this->create_modal = true;
+
+        }
+    }
+
+
+    public function pass_reset($id = null){
+
+        
+
     }
 
     public function store(){
-        $this->validate([
-            'name'=>'required|string',
-            'email'=>'required|email',
-            'password'=>'required',
-        ]);
 
-        $users = new User();
-        $users->name =$this->name;
-        $users->email =$this->email;
-        $users->password =$this->password;
-        $users->save();
+        if(!empty($this->uid->id)){
+            $this->validate([
+                'name'=>'required|string',
+                'email'=>'required|email',
+                
+            ]);
+    
+            
+            $this->uid->name =$this->name;
+            $this->uid->email =$this->email;
+            $this->uid->save();
+            
+            $this->alert('success','success');
+            $this->cancel();
+
+        }else{
+
+            $this->validate([
+                'name'=>'required|string',
+                'email'=>'required|email',
+                'password'=>'required',
+            ]);
+    
+            $users = new User();
+            $users->name =$this->name;
+            $users->email =$this->email;
+            $users->password =$this->password;
+            $users->save();
+            
+            $this->alert('success','success');
+            $this->cancel();
+
+
+
+        }
+
+
         
-        $this->alert('success','success');
-        $this->cancel();
 
 
 
