@@ -18,7 +18,11 @@
                             <div class="d-flex justify-content-end ">
                                 <div class="col-lg-3">
                                     <div class="form-group">
-                                        <input type="text" wire:model="search" class="form-control" placeholder="search">
+                                        <input type="text" wire:model="search" class="form-control"
+                                            placeholder="search">
+                                    </div>
+                                    <div class="form-group">
+                                        <button wire:click.prevent='create' class="btn btn-primary">add</button>
                                     </div>
                                 </div>
                             </div>
@@ -42,7 +46,7 @@
                                                 <td>{{ $item->role }}</td>
                                                 <td>
                                                     <span
-                                                        class="badge text-capitalize h5 {{ $item->status ? "bg-success" : "bg-danger" }}">{{ $item->status ? "active" : "inactive" }}</span>
+                                                        class="badge text-capitalize h5 {{ $item->status ? 'bg-success' : 'bg-danger' }}">{{ $item->status ? 'active' : 'inactive' }}</span>
                                                 </td>
                                                 <td>
                                                     {{-- <div
@@ -52,8 +56,9 @@
                                                         <label class="custom-control-label" for="customSwitch{{ $item->id }}">{{ $item->public ? 'Public' : ' Private ' }}</label>
                                                         
                                                     </div> --}}
-                                                    <span class="badge text-capitalize h5 {{ $item->public ? "bg-success" : "bg-danger" }}">{{ $item->public ? "public" : "private" }}</span>
-                                                   
+                                                    <span
+                                                        class="badge text-capitalize h5 {{ $item->public ? 'bg-success' : 'bg-danger' }}">{{ $item->public ? 'public' : 'private' }}</span>
+
                                                 </td>
                                                 <td>
                                                     <div class="btn-group">
@@ -69,23 +74,26 @@
                                                                 Role</a>
                                                             <a class="dropdown-item"
                                                                 wire:click.prevent='change_status({{ $item->id }})'
-                                                                href="#">{{ $item->status ? "Deactivate" :"Activate" }}
-                                                                
+                                                                href="#">{{ $item->status ? 'Deactivate' : 'Activate' }}
+
                                                             </a>
-                                                            <a class="dropdown-item" wire:click.prevent='visibility({{ $item->id }})' href="#">{{ $item->public ? "Private" : "Public" }}</a>
+                                                            <a class="dropdown-item"
+                                                                wire:click.prevent='visibility({{ $item->id }})'
+                                                                href="#">{{ $item->public ? 'Private' : 'Public' }}</a>
                                                         </div>
                                                     </div>
                                                 </td>
                                             </tr>
                                         @empty
                                             <tr>
-                                                <td scope="row" colspan="5" class="text-muted text-center">Empty</td>
+                                                <td scope="row" colspan="5" class="text-muted text-center">Empty
+                                                </td>
                                             </tr>
                                         @endforelse
                                     </tbody>
                                 </table>
                             </div>
-                            
+
                             {{ $users->links() }}
                             {{-- modal --}}
                             <div class="modal  @if ($role_modal) show @endif"
@@ -122,6 +130,34 @@
                                 </div>
                             </div>
                             {{-- modal --}}
+
+                            <x-modal :status="$create_modal" title="Add User">
+
+                                <form wire:submit='store'>
+
+                                    <div class="form-group">
+                                        <label for="">Name</label>
+                                        <input type="text" wire:model='name'>
+                                        <x-error for="name" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Email</label>
+                                        <input type="email" wire:model='email'>
+                                        <x-error for="email" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Password</label>
+                                        <input type="text" wire:model='password'>
+                                        <x-error for="password" />
+                                    </div>
+
+                                    <button  class="btn btn-dark" >Store <x-spinner target="store"> save</button>
+
+
+
+                                </form>
+
+                            </x-modal>
                         </div>
                     </div>
                 </div>

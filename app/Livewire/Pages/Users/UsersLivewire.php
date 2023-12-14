@@ -15,8 +15,13 @@ class UsersLivewire extends Component
     protected $paginationTheme = 'bootstrap';
     // public $users = [];
     public $role_modal = false;
+    public $create_modal = false;
     public $user;
     public $role;
+
+    public $name;
+    public $email;
+    public $password;
 
     public $search;
 
@@ -26,6 +31,27 @@ class UsersLivewire extends Component
     {
         $this->user = User::find($id);
         $this->role_modal = true;
+    }
+
+    public function create(){
+        $this->create_modal = true;
+    }
+
+    public function store(){
+        $this->validate([
+            'name'=>'required|string',
+            'email'=>'required|email',
+            'password'=>'required',
+        ]);
+
+        $users = new User();
+        $users->name =$this->name;
+        $users->email =$this->email;
+        $users->password =$this->password;
+        $users->store();
+
+
+
     }
     public function cancel()
     {
