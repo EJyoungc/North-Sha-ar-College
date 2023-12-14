@@ -40,7 +40,7 @@
 
                                                 <div class="form-group">
                                                     <label for="">Password</label>
-                                                    <input type="text" wire:model='password' class="form-control">
+                                                    <input type="text" readonly wire:model='password' class="form-control">
                                                     <x-error for="password" />
                                                 </div>
 
