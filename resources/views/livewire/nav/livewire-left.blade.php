@@ -215,10 +215,16 @@
                    
                   </p>
                 </a>
-              </li> --}}
-              {{-- <li class="nav-header">Hero</li>
+              </li>
+              <li class="nav-header">Hero</li>
               <li class="nav-item">
-                
+                <a href="{{ route('hero') }}" class="nav-link">
+                  
+                  <i class="fas fa-image "></i>
+                  <p>
+                    Hero Image 
+                  </p>
+                </a>
               </li> --}}
               <li class="nav-header">Blog</li>
               <li class="nav-item">
@@ -231,7 +237,7 @@
                   </p>
                 </a>
               </li>
-              <li class="nav-item">
+              {{-- <li class="nav-item">
                 <a href="{{ route('categories') }}" class="nav-link">
                   <i class="nav-icon fas fa-copy"></i>
                   <p>
@@ -240,8 +246,8 @@
                   </p>
                 </a>
                
-              </li>
-              <li class="nav-item">
+              </li> --}}
+              {{-- <li class="nav-item">
                 <a href="{{ route('tags') }}" class="nav-link">
                   
                   
@@ -252,63 +258,45 @@
                   </p>
                 </a>
                
+              </li> --}}
+
+              {{-- <li class="nav-item">
+                <a href="{{ route('subscribers') }}" class="nav-link">
+                  
+                  <i class=" nav-icon fa fa-at" aria-hidden="true"></i>
+                  <p>
+                    Subscribers
+                    
+                  </p>
+                </a>
+               
+              </li> --}}
+              {{-- <li class="nav-header">Home Page</li>
+              <li class="nav-item">
+                <a href="{{ route('section.partners') }}" class="nav-link">
+                  <i class="fa fa-leaf nav-icon " aria-hidden="true"></i>
+                  <p>Partners</p>
+                </a>
+              </li> --}}
+              <li class="nav-header">Training</li>
+              {{-- <li class="nav-item">
+                <a href="{{ route('cohort') }}" class="nav-link">
+                 
+                 <i class="fa fa-calendar nav-icon "></i>
+                  <p>Cohort</p>
+                </a>
+              </li> --}}
+
+              <li class="nav-item">
+                <a href="{{ route('cohort.candidates') }}" class="nav-link">
+                  <i class="fa fa-users nav-icon" aria-hidden="true"></i>
+                  <p>Cadidates</p>
+                </a>
               </li>
 
-              <li class="nav-header">Home Page</li>
-              <li class="nav-item">
-                <a href="{{ route('hero') }}" class="nav-link">
-                  <i class="fa fa-arrow-up nav-icon " aria-hidden="true"></i>
-                  <p>Hero</p>
-                  
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('about') }}" class="nav-link">
-                  <i class="fa fa-list nav-icon " aria-hidden="true"></i>
-                  <p>About</p>
-                  
-                  
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('testimonials') }}" class="nav-link">
-                  <i class="fa fa-microphone nav-icon " aria-hidden="true"></i>
-                  <p>Testimonials</p>
 
-                  
-                  
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('whys') }}" class="nav-link">
-                  <i class="fa fa-question nav-icon " aria-hidden="true"></i>
-                  <p>WHYs</p>
-                  
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('footer') }}" class="nav-link">
-                  <i class="fa fa-arrow-down nav-icon " aria-hidden="true"></i>
-                  <p>Footer</p>
-                  
-                </a>
-              </li>
-              <li class="nav-header">Intake & Candidates</li>
-              <li class="nav-item">
-                <a href="{{ route('intake') }}" class="nav-link">
-                  <i class="fa fa-leaf nav-icon " aria-hidden="true"></i>
-                  <p>Intake</p>
-                </a>
-              </li>
-              <li class="nav-header">Educational Programs</li>
-              <li class="nav-item">
-                <a href="{{ route('programs') }}" class="nav-link">
-                  <i class="fa fa-leaf nav-icon " aria-hidden="true"></i>
-                  <p>Programs / Courses</p>
-                </a>
-              </li>
               
-            
+
               <li class="nav-item ">
                 <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout').submit();"  class="nav-link">
                   
@@ -319,13 +307,63 @@
                         @csrf
                     </form>
                   </p>
-                </a>   
+                </a>
+                
+                
               </li>
               
             </ul>
           </nav>
           <!-- /.sidebar-menu -->
           @endif
+          @if(Auth::user()->role == "staff")
+
+          <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+              <!-- Add icons to the links using the .nav-icon class
+                   with font-awesome or any other icon font library -->
+              <li class="nav-item">
+                <a href="{{ route('root') }}" class="nav-link">
+                  <i class="nav-icon fa fa-globe "></i>
+                  
+                  <p>
+                    Home Page
+                    
+                  </p>
+                </a>
+                
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('dashboard') }}" class="nav-link">
+                  <i class="nav-icon fas fa-tachometer-alt"></i>
+                  <p>
+                    Dashboard
+                    
+                  </p>
+                </a>
+                
+              </li>
+
+              <li class="nav-item ">
+                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout').submit();"  class="nav-link">
+                  
+                  <i class="nav-icon fas fa-door-open"></i>
+                  <p class="text-danger" >
+                    Logout
+                    <form id="logout" action="{{route('logout') }}"  method="POST" >
+                        @csrf
+                    </form>
+                  </p>
+                </a>
+                
+                
+              </li>
+              
+            </ul>
+          </nav>
+
+          @endif
+
         </div>
         <!-- /.sidebar -->
       </aside>
