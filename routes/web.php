@@ -65,7 +65,7 @@ Route::middleware([
 
     Route::get('/denied', InactiveUserLivewire::class)->name('inactive_account');
     Route::middleware([
-        'auth:sanctum',
+        'isactive',
     ])->group(function () {
 
         Route::get('/dashboard', DashboardLivewire::class)->name('dashboard');
@@ -92,6 +92,8 @@ Route::middleware([
         Route::get('dashboard/testimonials', TestimonialsLivewire::class)->name('testimonials');
         Route::get('dashboard/about', AboutLivewire::class)->name('about');
     });
+
+    Route::get('dashboard/profile', ProfileLivewire::class)->name('user.profile');
 
 
     
