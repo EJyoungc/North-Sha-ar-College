@@ -36,8 +36,8 @@
 
     <!-- Scripts -->
     {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-    <link rel="stylesheet" href="{{ asset('build/assets/app-0958fbe4.css') }}">
-        <script src="{{ asset('build/assets/app-dbe23e4c.js') }}"></script>
+    {{-- <link rel="stylesheet" href="{{ asset('build/assets/app-0958fbe4.css') }}"> --}}
+        {{-- <script src="{{ asset('build/assets/app-dbe23e4c.js') }}"></script> --}}
     <!-- Styles -->
     @livewireStyles
 </head>
