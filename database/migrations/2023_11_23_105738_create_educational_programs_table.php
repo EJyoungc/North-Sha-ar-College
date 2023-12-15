@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('slug');
             $table->timestamps();
-
+        
             
             
         });

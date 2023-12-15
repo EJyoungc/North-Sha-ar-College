@@ -20,6 +20,12 @@ class NewsShowLivewire extends Component
 
         $this->p = Post::where('slug',$slug)->first();
 
+        $p = Post::find($this->p->id);
+        $count = $p->view;
+        $count++;
+        $p->view = $count ;
+        $p->save();
+
     }
 
 
