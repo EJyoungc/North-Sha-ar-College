@@ -23,16 +23,16 @@
                         <form method="POST" action="{{ route('password.email') }}">
                             @csrf
 
-                            <div class="block">
+                            <div class="form-group">
                                 <x-label for="email" value="{{ __('Email') }}" />
-                                <x-input id="email" class="block mt-1 w-full" type="email" name="email"
+                                <x-input id="email" class="form-control" type="email" name="email"
                                     :value="old('email')" required autofocus autocomplete="username" />
                             </div>
 
-                            <div class="flex items-center justify-end mt-4">
-                                <x-button>
+                            <div class="flex items-center justify-content-end mt-4">
+                                <button type="submit" class="btn btn-dark" >
                                     {{ __('Email Password Reset Link') }}
-                                </x-button>
+                                </button>
                             </div>
                         </form>
                     </div>
