@@ -12,7 +12,7 @@ class PartnersLivewire extends Component
 
     use LivewireAlert;
     use WithFileUploads;
-    public $mobile = false;
+    public $modal = false;
     public $image;
     public $name;
     public $id;
