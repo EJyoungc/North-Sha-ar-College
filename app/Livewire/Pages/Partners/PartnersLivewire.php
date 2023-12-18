@@ -77,7 +77,7 @@ class PartnersLivewire extends Component
     }
     public function cancel()
     {
-        $this->reset(['name', 'url', 'logo', 'description', 'modal']);
+        $this->reset(['name', 'url', 'image', 'description', 'modal']);
     }
 
     public function render()
