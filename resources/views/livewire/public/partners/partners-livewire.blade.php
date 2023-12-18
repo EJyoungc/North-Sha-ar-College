@@ -18,7 +18,7 @@
                     <div class="col-lg-4 center-block  ">
 
 
-                        <img class="img-responsive" src="{{ asset('assets/uploads/' . $item->logo) }}"
+                        <img class="img-responsive img-fluid" src="{{ asset('assets/uploads/' . $item->logo) }}"
                             alt="{{ $item->name }}">
                         <h4 class="text-center">{{ $item->name }}</h4>
                         <a class="btn btn-success" href="{{ $item->url }}">Visit</a>
