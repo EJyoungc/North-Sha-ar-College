@@ -18,7 +18,7 @@
               
                
                 @foreach ($partners as $item)
-                <img src="{{ asset('assets/uploads/'.$item->logo) }}" alt="Image 3">
+                <img src="{{ asset('assets/uploads/'.$item->logo) }}" title="{{ $item->name }}"  alt="{{ $item->name }}" >
                 @endforeach
                 <!-- Add more images as needed -->
             </div>
