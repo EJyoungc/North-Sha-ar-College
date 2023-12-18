@@ -41,12 +41,12 @@ class PartnersLivewire extends Component
                     'image'=>'required|image',
                 ]);
 
-                Storage::disk('custom')->delete($this->id->image);
+                Storage::disk('custom')->delete($this->id->logo);
                 $file =$this->image->store('partners','custom');
                 $img = Image::make(public_path('assets/uploads/' . $file))->fit(400, 400);
                 $img->save();
                 $this->id->name = $this->name;
-                $this->id->image = $this->img;
+                $this->id->logo = $this->img;
                 $this->id->save();
                 $this->cancel();
                 $this->alert('success','update');
@@ -73,7 +73,7 @@ class PartnersLivewire extends Component
             $img = Image::make(public_path('assets/uploads/' . $file))->fit(400, 400);
             $img->save();
             $p->name = $this->name;
-            $p->image = $img;
+            $p->logo = $img;
             $p->save();
             $this->cancel();
             $this->alert('success','successfull');
@@ -92,7 +92,7 @@ class PartnersLivewire extends Component
     public function delete($id)
     {
        $p = Partner::find($id);
-       Storage::disk('custom')->delete($p->image);
+       Storage::disk('custom')->delete($p->logo);
        $p->delete();
        $this->alert('success','successfull');
     }
