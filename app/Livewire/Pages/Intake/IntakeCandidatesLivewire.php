@@ -87,7 +87,9 @@ class IntakeCandidatesLivewire extends Component
     {
         // dd($this);
         $ic = IntakeCandidates::where('intake_id', $this->intake_id)->where(function ($query){
-            $query->where('name', 'like', '%' . $this->search . '%')
+            $query->where('first_name', 'like', '%' . $this->search . '%')
+            ->orWhere('middle_name', 'like', '%' . $this->search . '%')
+            ->orWhere('surname', 'like', '%' . $this->search . '%')
                   ->orWhere('status', 'like', '%' . $this->search . '%');
                  
                   
@@ -98,7 +100,9 @@ class IntakeCandidatesLivewire extends Component
         ->where('status', 'complete')
         ->where('confirm', true)
         ->where(function ($query){
-            $query->where('name', 'like', '%' . $this->search . '%')
+            $query->where('first_name', 'like', '%' . $this->search . '%')
+            ->orWhere('middle_name', 'like', '%' . $this->search . '%')
+            ->orWhere('surname', 'like', '%' . $this->search . '%')
                   ->orWhere('status', 'like', '%' . $this->search . '%');
                   
                   
@@ -109,7 +113,9 @@ class IntakeCandidatesLivewire extends Component
         $ccc =  IntakeCandidates::where('stem_cohort_id', $this->cohort->id)
         ->where('confirm', true)
         ->where(function ($query){
-            $query->where('name', 'like', '%' . $this->search . '%')
+            $query->where('first_name', 'like', '%' . $this->search . '%')
+            ->orWhere('middle_name', 'like', '%' . $this->search . '%')
+            ->orWhere('surname', 'like', '%' . $this->search . '%')
                   ->orWhere('status', 'like', '%' . $this->search . '%');
                   
                   
@@ -121,7 +127,9 @@ class IntakeCandidatesLivewire extends Component
         $cu =  IntakeCandidates::where('stem_cohort_id', $this->cohort->id)
         ->where('confirm', false)
         ->where(function ($query){
-            $query->where('name', 'like', '%' . $this->search . '%')
+            $query->where('first_name', 'like', '%' . $this->search . '%')
+            ->orWhere('middle_name', 'like', '%' . $this->search . '%')
+            ->orWhere('surname', 'like', '%' . $this->search . '%')
                   ->orWhere('status', 'like', '%' . $this->search . '%');
                   
                   
