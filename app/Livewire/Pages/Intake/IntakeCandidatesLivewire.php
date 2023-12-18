@@ -46,9 +46,9 @@ class IntakeCandidatesLivewire extends Component
     public function approve($id)
     {
         // dd($id);
-        $this->id = $id;
-        $ic = IntakeCandidates::where('intake_id', $this->id)->first();
-        $i = IntakeCandidates::find($ic->id);
+        
+        // $ic = IntakeCandidates::where('intake_id', $this->id)->first();
+        $i = IntakeCandidates::find($id);
         $i->status = "approved";
         $i->save();
         $this->alert('success', 'updated');
@@ -58,9 +58,9 @@ class IntakeCandidatesLivewire extends Component
     public function disapprove($id)
     {
         // dd($id);
-        $this->id = $id;
-        $ic = IntakeCandidates::where('intake_id', $this->id)->first();
-        $i = IntakeCandidates::find($ic->id);
+        
+        // $ic = IntakeCandidates::where('intake_id', $this->id)->first();
+        $i = IntakeCandidates::find($id);
 
         $i->status = "disapproved";
         $i->save();
