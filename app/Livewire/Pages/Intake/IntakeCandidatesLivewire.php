@@ -20,19 +20,20 @@ class IntakeCandidatesLivewire extends Component
     public $candidate;
     public $subjects;
     public $programs = [];
-    #[Url] 
+    #[Url]
     public $search = '';
     public $id;
 
 
-    public function cancel(){
+    public function cancel()
+    {
         $this->reset(['modal']);
     }
 
     public function info($id)
     {
         $this->candidate =  IntakeCandidates::find($id);
-        $this->programs = CandidateProgram::where('intake_candidate_id',$this->candidate->id)->get();
+        $this->programs = CandidateProgram::where('intake_candidate_id', $this->candidate->id)->get();
         // dd($this->programs);
         $this->modal = true;
     }
@@ -42,30 +43,27 @@ class IntakeCandidatesLivewire extends Component
         $this->intake_id = $id;
     }
 
-    public function approve_toggle($id = null)
+    public function approve($id = null)
     {
         // dd($id);
         $this->id = $id;
         $ic = IntakeCandidates::where('intake_id', $this->id)->first();
-        if(!empty($ic)){
-            if ($ic->status == "") {
-                $ic->status = "disapproved";
-                $ic->save();
-                $this->alert('success', 'updated');
-            }elseif($ic->status == "approved"){
-            
-                $ic->status = "disapproved";
-                $ic->save();
-                $this->alert('success', 'updated');
-    
-        }else {
-                $ic->status = "approved";
-                $ic->save();
-                $this->alert('success', 'updated');
-            }
-        }
-        }
-       
+        $ic->status = "approved";
+        $ic->save();
+        $this->alert('success', 'updated');
+    }
+
+
+    public function disapprove($id = null)
+    {
+        // dd($id);
+        $this->id = $id;
+        $ic = IntakeCandidates::where('intake_id', $this->id)->first();
+        $ic->status = "disapproved";
+        $ic->save();
+        $this->alert('success', 'updated');
+    }
+
 
 
     public function approve_toggle_all()
@@ -97,17 +95,14 @@ class IntakeCandidatesLivewire extends Component
     public function render()
     {
         // dd($this);
-        $ic = IntakeCandidates::where('intake_id', $this->intake_id)->where(function ($query){
+        $ic = IntakeCandidates::where('intake_id', $this->intake_id)->where(function ($query) {
             $query->where('first_name', 'like', '%' . $this->search . '%')
-            ->orWhere('middle_name', 'like', '%' . $this->search . '%')
-            ->orWhere('surname', 'like', '%' . $this->search . '%')
-                  ->orWhere('status', 'like', '%' . $this->search . '%');
-                 
-                  
-    
+                ->orWhere('middle_name', 'like', '%' . $this->search . '%')
+                ->orWhere('surname', 'like', '%' . $this->search . '%')
+                ->orWhere('status', 'like', '%' . $this->search . '%');
         })
-        ->paginate(10);
-        
+            ->paginate(10);
+
         return view('livewire.pages.intake.intake-candidates-livewire')->with('intake_candidates', $ic);
     }
 }
