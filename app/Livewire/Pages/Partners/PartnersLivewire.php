@@ -47,8 +47,8 @@ class PartnersLivewire extends Component
         ]);
 
         $file = $this->logo->store('partners', 'custom');
-        $img = Image::make(public_path('assets/uploads/' . $file))->fit(400, 400);
-        $img->save();
+        // $img = Image::make(public_path('assets/uploads/' . $file))->fit(400, 400);
+        // $img->save();
 
         if ($file != null) {
             $p = new Partner();
