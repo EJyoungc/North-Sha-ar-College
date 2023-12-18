@@ -15,10 +15,14 @@
         
         <div class="row">
             @foreach ($partners as $item)
-                <div class="col-lg-4 text-center ">
-                    <img class="img-responsive" src="{{ asset('assets/uploads/'.$item->logo) }}" alt="{{ $item->name }}">
-                    <h4>{{ $item->name }}</h4>
-                    <a class="btn btn-success" href="{{ $item->url }}">Visit</a>
+                <div class="col-lg-4  ">
+
+                    <div style="text-align: center;">
+                        <img class="img-responsive" src="{{ asset('assets/uploads/'.$item->logo) }}" alt="{{ $item->name }}">
+                        <h4>{{ $item->name }}</h4>
+                        <a class="btn btn-success" href="{{ $item->url }}">Visit</a>
+                    </div>
+                   
                 </div>
                 
             @endforeach
