@@ -10,6 +10,7 @@ use App\Livewire\Pages\Hero\HeroSectionLivewire;
 use App\Livewire\Pages\Programs\EducationalProgramsLivewire;
 use App\Livewire\Pages\Intake\IntakeCandidatesLivewire;
 use App\Livewire\Pages\Intake\IntakeLivewire;
+use App\Livewire\Pages\Partners\PartnersLivewire;
 use App\Livewire\Pages\Posts\PostsCreateLivewire;
 use App\Livewire\Pages\Posts\PostsEditLivewire;
 use App\Livewire\Pages\Posts\PostsLivewire;
@@ -26,6 +27,7 @@ use App\Livewire\Public\Enroll\EnrollLivewire;
 use App\Livewire\Public\News\NewsCategoryLivewire;
 use App\Livewire\Public\News\NewsLivewire;
 use App\Livewire\Public\News\NewsShowLivewire;
+use App\Livewire\Public\Partners\PartnersLivewire as PartnersPartnersLivewire;
 use App\Livewire\Public\RootLiverwire;
 use App\Livewire\Public\Teacher\TeachersLivewire;
 use App\Models\Intake;
@@ -51,7 +53,8 @@ Route::get('/news/category/{slug}', NewsCategoryLivewire::class)->name('root.new
 Route::get('/courses', CoursesLivewire::class)->name('root.courses');
 Route::get('/courses/{slug}', CoursesShowLivewire::class)->name('root.courses.show');
 Route::get('/staff', TeachersLivewire::class)->name('root.staff');
-Route::get('about', AboutAboutLivewire::class)->name('root.about');
+Route::get('/about', AboutAboutLivewire::class)->name('root.about');
+Route::get('/partners', PartnersPartnersLivewire::class)->name('root.partners');
 // Route::get('/test',function(){
 //     return view('welcome');
 // })->name('root');
@@ -81,7 +84,7 @@ Route::middleware([
         // Route::get('dashboard/subscribers',SubscribeLivewire::class)->name('subscribers');
         Route::get('dashboard/tags', TagsLivewire::class)->name('tags');
         Route::get('dashboard/tags/create', TagsCreateLivewire::class)->name('tags.create');
-        Route::get('dashboard/Users', UsersLivewire::class)->name('users');
+        Route::get('dashboard/users', UsersLivewire::class)->name('users');
         Route::get('dashboard/profile', ProfileLivewire::class)->name('user.profile');
         Route::get('dashboard/intake', IntakeLivewire::class)->name('intake');
         Route::get('dashboard/intake/{id}/candidates', IntakeCandidatesLivewire::class)->name('intake.candidates.show');
@@ -91,6 +94,7 @@ Route::middleware([
         Route::get('dashboard/whys', WhysLivewire::class)->name('whys');
         Route::get('dashboard/testimonials', TestimonialsLivewire::class)->name('testimonials');
         Route::get('dashboard/about', AboutLivewire::class)->name('about');
+        Route::get('dashboard/partners', PartnersLivewire::class)->name('partners');
     });
 
     Route::get('dashboard/profile', ProfileLivewire::class)->name('user.profile');

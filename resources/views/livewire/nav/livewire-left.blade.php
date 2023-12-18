@@ -139,6 +139,21 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="{{ route('partners') }}" class="nav-link">
+                  <i class="fa fa-users nav-icon " aria-hidden="true"></i>
+                  <p>Partners</p>
+                  
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{ route('partners') }}" class="nav-link">
+                  <i class="fa fa-users nav-icon " aria-hidden="true"></i>
+                  <p>Partners</p>
+                  
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="{{ route('footer') }}" class="nav-link">
                   <i class="fa fa-arrow-down nav-icon " aria-hidden="true"></i>
                   <p>Footer</p>
