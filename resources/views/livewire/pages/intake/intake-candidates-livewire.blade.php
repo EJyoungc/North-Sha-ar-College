@@ -22,7 +22,7 @@
                 <div class="col-sm-12">
                     <div class="d-flex justify-content-end ">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="search...">
+                            <input type="text" wire:model.live='search' class="form-control" placeholder="search...">
                         </div>
                         <div class="form-group">
                             {{-- <button class="btn btn-primary" wire:click="open_modal" >add <x-spinner target="open_modal" /> </button> --}}
