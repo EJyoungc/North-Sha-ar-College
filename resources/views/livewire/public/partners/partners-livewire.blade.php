@@ -19,7 +19,7 @@
 
                     <div class=" center-block">
                         <img class="img-responsive" src="{{ asset('assets/uploads/'.$item->logo) }}" alt="{{ $item->name }}">
-                        <h4>{{ $item->name }}</h4>
+                        <h4 class="text-center" >{{ $item->name }}</h4>
                         <a class="btn btn-success" href="{{ $item->url }}">Visit</a>
                     </div>
                    
