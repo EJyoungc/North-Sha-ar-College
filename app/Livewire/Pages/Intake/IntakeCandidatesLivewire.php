@@ -22,6 +22,7 @@ class IntakeCandidatesLivewire extends Component
     public $programs = [];
     #[Url] 
     public $search = '';
+    public $id;
 
 
     public function cancel(){
@@ -43,8 +44,8 @@ class IntakeCandidatesLivewire extends Component
 
     public function approve_toggle($id = null)
     {
-        dd($id);
-        $ic = IntakeCandidates::where('intake_id', $id)->first();
+        // dd($id);
+        $ic = IntakeCandidates::where('intake_id', $this->id)->first();
         if(!empty($ic)){
             if ($ic->status == "") {
                 $ic->status = "disapproved";
