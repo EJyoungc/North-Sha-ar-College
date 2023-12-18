@@ -65,11 +65,13 @@
                                                             
                                                             {{-- <a href="" class="dropdown-menu">Edit</a> --}}
                                                             <a class="dropdown-item" 
-                                                                href="#" wire:click='create({{ $item->id }})'>Edit</a>
+                                                                href="#">Edit</a>
                                                             <a class="dropdown-item"
-                                                                wire:click="delete({{ $item->id }})"
+                                                                wire:click="deactivate({{ $item->id }})"
                                                                 href="#">Delete</a>
-                                                                
+                                                                <a class="dropdown-item"
+                                                                wire:click="mail({{ $item->id }})"
+                                                                href="#">mail</a>
                                                         </div>
 
 
@@ -93,22 +95,32 @@
                 </div>
             </div>
         </div>
-        <x-modal :status="$modal"  title=" Add Partner" >
+        <x-modal :status="$modal"  title="Parnter Form " >
             <form wire:submit.prevent='store' >
                 <div class="form-group">
                     <label for="">Name</label>
-                    <input type="text" class="form-control"  wire:model='name' placeholder="Name" >
+                    <input type="text" class="form-control"  wire:model='name' placeholder="partner name" >
                     <x-error for="name" />
                     
                 </div>
-                
                 <div class="form-group">
-                    <label for="">Logo</label>
-                    <input type="file" class="form-control"  wire:model='image' placeholder="" >
-                    <x-error for="image" />
+                    <label for="">URL</label>
+                    <input type="text" class="form-control"  wire:model='url' placeholder="http://google.org" >
+                    <x-error for="url" />
                     
                 </div>
-                
+                <div class="form-group">
+                    <label for="">Logo</label>
+                    <input type="file" class="form-control"  wire:model='logo' placeholder="" >
+                    <x-error for="logo" />
+                    
+                </div>
+                <div class="form-group">
+                    <label for="">Description</label>
+                    <input type="text" class="form-control"  wire:model='description' >
+                    <x-error for="description" />
+                    
+                </div>
 
             <div class="form-group">
                 <button type="submit"  class="btn btn-dark">
