@@ -15,7 +15,7 @@
 
             <div class="row">
                 @foreach ($partners as $item)
-                    <div class="col-lg-4 center-block  ">
+                    <div class="col-lg-4 text-center  ">
 
 
                         <img class="img-responsive img-fluid" src="{{ asset('assets/uploads/' . $item->logo) }}"
