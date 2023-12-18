@@ -31,8 +31,10 @@
                   <li class="active"><a href="{{ route('root') }}">Home</a></li>
                   <li><a href="{{ route('root.courses') }}">Courses</a></li>
                   <li><a href="{{ route('root.news') }}">News</a></li>
+                  <li><a href="{{ route('root.news') }}">News</a></li>
                   @if($users->count() > 0)<li><a href="{{ route('root.staff') }}">Staff</a></li>@endif
                   @if(!empty($cat))<li><a href="{{ route('root.news.category',$cat->slug) }}">Events</a></li> @endif
+                  <li><a href="{{ route('root.partners') }}">Partners</a></li>
                 </ul>
               </div>
             </div>
