@@ -96,7 +96,7 @@ class IntakeCandidatesLivewire extends Component
     
         })
         ->paginate(10);
-        $cc =  IntakeCandidates::where('stem_cohort_id', $this->cohort->id)
+        $cc =  IntakeCandidates::where('intake_id', $this->intake_id)
         ->where('status', 'complete')
         ->where('confirm', true)
         ->where(function ($query){
@@ -110,7 +110,7 @@ class IntakeCandidatesLivewire extends Component
         ->get()
         ->count();
 
-        $ccc =  IntakeCandidates::where('stem_cohort_id', $this->cohort->id)
+        $ccc =  IntakeCandidates::where('intake_id', $this->intake_id)
         ->where('confirm', true)
         ->where(function ($query){
             $query->where('first_name', 'like', '%' . $this->search . '%')
@@ -124,7 +124,7 @@ class IntakeCandidatesLivewire extends Component
         ->get()
         ->count();
         
-        $cu =  IntakeCandidates::where('stem_cohort_id', $this->cohort->id)
+        $cu =  IntakeCandidates::where('intake_id', $this->intake_id)
         ->where('confirm', false)
         ->where(function ($query){
             $query->where('first_name', 'like', '%' . $this->search . '%')
