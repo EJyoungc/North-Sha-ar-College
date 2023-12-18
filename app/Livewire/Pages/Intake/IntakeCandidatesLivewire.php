@@ -88,7 +88,7 @@ class IntakeCandidatesLivewire extends Component
         // dd($this);
         $ic = IntakeCandidates::where('intake_id', $this->intake_id)->where(function ($query){
             $query->where('name', 'like', '%' . $this->search . '%')
-                  ->orWhere('status', 'like', '%' . $this->search . '%')
+                  ->orWhere('status', 'like', '%' . $this->search . '%');
                  
                   
     
@@ -99,7 +99,7 @@ class IntakeCandidatesLivewire extends Component
         ->where('confirm', true)
         ->where(function ($query){
             $query->where('name', 'like', '%' . $this->search . '%')
-                  ->orWhere('status', 'like', '%' . $this->search . '%')
+                  ->orWhere('status', 'like', '%' . $this->search . '%');
                   
                   
         })
@@ -110,7 +110,7 @@ class IntakeCandidatesLivewire extends Component
         ->where('confirm', true)
         ->where(function ($query){
             $query->where('name', 'like', '%' . $this->search . '%')
-                  ->orWhere('status', 'like', '%' . $this->search . '%')
+                  ->orWhere('status', 'like', '%' . $this->search . '%');
                   
                   
     
@@ -122,7 +122,7 @@ class IntakeCandidatesLivewire extends Component
         ->where('confirm', false)
         ->where(function ($query){
             $query->where('name', 'like', '%' . $this->search . '%')
-                  ->orWhere('status', 'like', '%' . $this->search . '%')
+                  ->orWhere('status', 'like', '%' . $this->search . '%');
                   
                   
     
