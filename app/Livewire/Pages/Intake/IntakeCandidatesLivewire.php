@@ -44,7 +44,7 @@ class IntakeCandidatesLivewire extends Component
     public function approve_toggle($id = null)
     {
         $ic = IntakeCandidates::where('intake_id', $id)->first();
-        dd($ic->status);
+        dd($ic);
         if ($ic->status == "") {
             $ic->status = "disapproved";
             $ic->save();
