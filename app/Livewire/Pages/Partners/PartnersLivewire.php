@@ -43,7 +43,7 @@ class PartnersLivewire extends Component
             'description'=>'sometimes'
         ]);
 
-        $file = $this->logo->store('partners');
+        $file = $this->logo->store('partners','custom');
         
         if($file != null){
         $p = new Partner();
