@@ -44,23 +44,25 @@ class IntakeCandidatesLivewire extends Component
     public function approve_toggle($id = null)
     {
         $ic = IntakeCandidates::where('intake_id', $id)->first();
-        dd($ic);
-        if ($ic->status == "") {
-            $ic->status = "disapproved";
-            $ic->save();
-            $this->alert('success', 'updated');
-        }elseif($ic->status == "approved"){
-        
-            $ic->status = "disapproved";
-            $ic->save();
-            $this->alert('success', 'updated');
-
-    }else {
-            $ic->status = "approved";
-            $ic->save();
-            $this->alert('success', 'updated');
+        if(!empty($ic)){
+            if ($ic->status == "") {
+                $ic->status = "disapproved";
+                $ic->save();
+                $this->alert('success', 'updated');
+            }elseif($ic->status == "approved"){
+            
+                $ic->status = "disapproved";
+                $ic->save();
+                $this->alert('success', 'updated');
+    
+        }else {
+                $ic->status = "approved";
+                $ic->save();
+                $this->alert('success', 'updated');
+            }
         }
-    }
+        }
+       
 
 
     public function approve_toggle_all()
