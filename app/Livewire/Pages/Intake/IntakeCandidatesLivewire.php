@@ -45,7 +45,7 @@ class IntakeCandidatesLivewire extends Component
     {
         $ic = IntakeCandidates::where('intake_id', $id)->first();
         
-        if ($ic->status == null) {
+        if ($ic->status == "") {
             $ic->status = "disapproved";
             $ic->save();
             $this->alert('success', 'updated');
