@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Public\Partners;
 
+use App\Models\Partner;
 use Livewire\Component;
 use Livewire\Attributes\Layout;
 
@@ -12,6 +13,7 @@ class PartnersLivewire extends Component
 
     public function render()
     {
-        return view('livewire.public.partners.partners-livewire');
+        $p = Partner::all();
+        return view('livewire.public.partners.partners-livewire')->with('partners',$p);
     }
 }
