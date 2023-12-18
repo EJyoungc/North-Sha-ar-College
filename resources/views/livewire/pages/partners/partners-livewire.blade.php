@@ -97,7 +97,7 @@
             <form wire:submit.prevent='store' >
                 <div class="form-group">
                     <label for="">Name</label>
-                    <input type="text" class="form-control"  wire:model='name' placeholder="partner name" >
+                    <input type="text" class="form-control"  wire:model='name' placeholder="Name" >
                     <x-error for="name" />
                     
                 </div>
