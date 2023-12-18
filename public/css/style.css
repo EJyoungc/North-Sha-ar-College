@@ -124,6 +124,22 @@ a:hover, a:focus, a:active {
   }
 }
 
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.image-container img {
+  width: 30%; /* Adjust the width as needed */
+  height: auto;
+  margin: 10px;
+  border-radius: 8px; /* Optional: Add rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
 .text-center {
   text-align: center;
 }

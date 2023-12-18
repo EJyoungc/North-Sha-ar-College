@@ -13,6 +13,17 @@
     <section class="probootstrap-section probootstrap-bg-white">
         <div class="container">
 
+
+            <div class="image-container">
+              
+               
+                @foreach ($partners as $item)
+                <img src="{{ asset('assets/uploads/'.$item->logo) }}" alt="Image 3">
+                @endforeach
+                <!-- Add more images as needed -->
+            </div>
+
+
             <div class="row">
                 @foreach ($partners as $item)
                     <div class="col-lg-4 text-center  " title="{{ $item->name }}">
