@@ -49,7 +49,13 @@ class IntakeCandidatesLivewire extends Component
             $ic->status = "disapproved";
             $ic->save();
             $this->alert('success', 'updated');
-        } else {
+        }elseif($ic->status == null){
+        
+            $ic->status = "disapproved";
+            $ic->save();
+            $this->alert('success', 'updated');
+
+    }else {
             $ic->status = "approved";
             $ic->save();
             $this->alert('success', 'updated');
