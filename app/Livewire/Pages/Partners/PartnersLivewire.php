@@ -3,6 +3,7 @@
 namespace App\Livewire\Pages\Partners;
 
 use App\Models\Partner;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Livewire\WithPagination;
@@ -11,6 +12,7 @@ class PartnersLivewire extends Component
 {
     use WithPagination;
     use WithFileUploads;
+    use LivewireAlert;
     
     public $modal =false;
     public $partner;
