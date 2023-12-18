@@ -54,7 +54,7 @@ class PartnersLivewire extends Component
             $p = new Partner();
             $p->name = $this->name;
             $p->url = $this->url;
-            $p->logo = $img;
+            $p->logo = $file;
             $p->save();
             $this->cancel();
             $this->alert('success', 'successfull!');
