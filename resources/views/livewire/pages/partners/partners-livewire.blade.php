@@ -64,14 +64,13 @@
                                                         <div class="dropdown-menu">
                                                             
                                                             {{-- <a href="" class="dropdown-menu">Edit</a> --}}
-                                                            <a class="dropdown-item" 
-                                                                href="#">Edit</a>
+                                                            
                                                             <a class="dropdown-item"
-                                                                wire:click="deactivate({{ $item->id }})"
+                                                                wire:click="delete({{ $item->id }})"
                                                                 href="#">Delete</a>
-                                                                <a class="dropdown-item"
+                                                                {{-- <a class="dropdown-item"
                                                                 wire:click="mail({{ $item->id }})"
-                                                                href="#">mail</a>
+                                                                href="#">mail</a> --}}
                                                         </div>
 
 

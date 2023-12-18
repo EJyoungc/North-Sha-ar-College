@@ -3,6 +3,7 @@
 namespace App\Livewire\Pages\Partners;
 
 use App\Models\Partner;
+use Illuminate\Support\Facades\Storage;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -65,6 +66,12 @@ class PartnersLivewire extends Component
         
     }
 
+    public function delete($id){
+
+       $p = Partner::find($id);
+       Storage::disk('custom')->delete($p->logo);
+       $p->delete();
+    }
     public function cancel(){
         $this->reset(['name','url','logo','description','modal']);
     }
