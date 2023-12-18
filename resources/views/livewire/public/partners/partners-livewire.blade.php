@@ -24,16 +24,16 @@
             </div>
 
 
-            <div class="row">
+            {{-- <div class="row">
                 @foreach ($partners as $item)
                     <div class="col-lg-4 text-center  " title="{{ $item->name }}">
                         <img class="img-responsive img-fluid w-100" src="{{ asset('assets/uploads/' . $item->logo) }}"
                             alt="{{ $item->name }}">
-                        {{-- <h4 class="text-center">{{ $item->name }}</h4>
-                        <a class="btn btn-success" href="{{ $item->url }}">Visit</a> --}}
+                        <h4 class="text-center">{{ $item->name }}</h4>
+                        <a class="btn btn-success" href="{{ $item->url }}">Visit</a>
                     </div>
                 @endforeach
-            </div>
+            </div> --}}
 
 
 
