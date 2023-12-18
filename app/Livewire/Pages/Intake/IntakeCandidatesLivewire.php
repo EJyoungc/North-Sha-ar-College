@@ -107,47 +107,7 @@ class IntakeCandidatesLivewire extends Component
     
         })
         ->paginate(10);
-        $cc =  IntakeCandidates::where('intake_id', $this->intake_id)
-        ->where('status', 'complete')
         
-        ->where(function ($query){
-            $query->where('first_name', 'like', '%' . $this->search . '%')
-            ->orWhere('middle_name', 'like', '%' . $this->search . '%')
-            ->orWhere('surname', 'like', '%' . $this->search . '%')
-                  ->orWhere('status', 'like', '%' . $this->search . '%');
-                  
-                  
-        })
-        ->get()
-        ->count();
-
-        $ccc =  IntakeCandidates::where('intake_id', $this->intake_id)
-        
-        ->where(function ($query){
-            $query->where('first_name', 'like', '%' . $this->search . '%')
-            ->orWhere('middle_name', 'like', '%' . $this->search . '%')
-            ->orWhere('surname', 'like', '%' . $this->search . '%')
-                  ->orWhere('status', 'like', '%' . $this->search . '%');
-                  
-                  
-    
-        })
-        ->get()
-        ->count();
-        
-        $cu =  IntakeCandidates::where('intake_id', $this->intake_id)
-        
-        ->where(function ($query){
-            $query->where('first_name', 'like', '%' . $this->search . '%')
-            ->orWhere('middle_name', 'like', '%' . $this->search . '%')
-            ->orWhere('surname', 'like', '%' . $this->search . '%')
-                  ->orWhere('status', 'like', '%' . $this->search . '%');
-                  
-                  
-    
-        })
-        ->get()
-        ->count();
-        return view('livewire.pages.intake.intake-candidates-livewire')->with('intake_candidates', $ic)->with('cc', $cc)->with('ccc', $ccc)->with('cu', $cu);
+        return view('livewire.pages.intake.intake-candidates-livewire')->with('intake_candidates', $ic);
     }
 }

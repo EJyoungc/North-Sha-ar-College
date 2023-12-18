@@ -41,7 +41,7 @@ return new class extends Migration
             $table->string('grade_5')->nullable();
             $table->string('subject_6')->nullable();
             $table->string('grade_6')->nullable();
-            $table->string('status')->nullable();
+            $table->string('status')->default('id');
             $table->timestamps();
         });
     }
