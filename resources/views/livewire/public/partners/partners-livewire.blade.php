@@ -4,7 +4,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12 text-left section-heading probootstrap-animate mb0">
-              <h1 class="mb0">School Gallery</h1>
+              <h1 class="mb0">Partners</h1>
             </div>
           </div>
         </div>
