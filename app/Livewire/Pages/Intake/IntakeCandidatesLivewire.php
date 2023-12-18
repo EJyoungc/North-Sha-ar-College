@@ -98,7 +98,7 @@ class IntakeCandidatesLivewire extends Component
         ->paginate(10);
         $cc =  IntakeCandidates::where('intake_id', $this->intake_id)
         ->where('status', 'complete')
-        ->where('confirm', true)
+        
         ->where(function ($query){
             $query->where('first_name', 'like', '%' . $this->search . '%')
             ->orWhere('middle_name', 'like', '%' . $this->search . '%')
@@ -111,7 +111,7 @@ class IntakeCandidatesLivewire extends Component
         ->count();
 
         $ccc =  IntakeCandidates::where('intake_id', $this->intake_id)
-        ->where('confirm', true)
+        
         ->where(function ($query){
             $query->where('first_name', 'like', '%' . $this->search . '%')
             ->orWhere('middle_name', 'like', '%' . $this->search . '%')
@@ -125,7 +125,7 @@ class IntakeCandidatesLivewire extends Component
         ->count();
         
         $cu =  IntakeCandidates::where('intake_id', $this->intake_id)
-        ->where('confirm', false)
+        
         ->where(function ($query){
             $query->where('first_name', 'like', '%' . $this->search . '%')
             ->orWhere('middle_name', 'like', '%' . $this->search . '%')
