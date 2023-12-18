@@ -124,6 +124,10 @@ a:hover, a:focus, a:active {
   }
 }
 
+.text-center {
+  text-align: center;
+}
+
 .probootstrap-sidebar-inner {
   background: #ffffff;
   padding: 40px;
