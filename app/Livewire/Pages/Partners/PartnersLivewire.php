@@ -67,14 +67,15 @@ class PartnersLivewire extends Component
                 'image'=>'required|image',
             ]);
 
-            $pn = new Partner();
+            
             // Storage::disk('custom')->delete($this->id->image);
             $file =$this->image->store('partners','custom');
             $img = Image::make(public_path('assets/uploads/' . $file))->fit(400, 400);
             $img->save();
-            $pn->name = $this->name;
-            $pn->logo = $img;
-            $pn->save();
+            Partner::create([
+                'name'=>$this->name,
+                'logo'=>$img
+            ]);
             $this->cancel();
             $this->alert('success','successfull');
 
