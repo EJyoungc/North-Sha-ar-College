@@ -19,7 +19,7 @@
             <div class="row">
                 @forelse ($users as $item)
                 <div class="col-md-3 col-sm-6">
-                    <a href="{{ route('root.staff') }}" class="probootstrap-teacher text-center probootstrap-animate">
+                    <div wire:click='link' class="probootstrap-teacher text-center probootstrap-animate">
                         <figure class="media">
                             <img src="{{ $item->profile_picture == '' ? asset('face-0.jpg') : asset('assets/uploads/'.$item->profile_picture)}}" alt="{{ $item->name }}"
                                 class="img-responsive">
@@ -34,7 +34,7 @@
                                 <li class="google-plus"><a href="#"><i class="icon-google-plus"></i></a></li>
                             </ul> --}}
                         </div>
-                    </a>
+                    </div>
                 </div>
                 @empty
                     

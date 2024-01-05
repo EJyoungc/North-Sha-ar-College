@@ -13,4 +13,9 @@ class RootStaffLivewire extends Component
         
         return view('livewire.public.components.root-staff-livewire')->with('users',$u);
     }
+
+
+    public function link(){
+        redirect(route('root.staff'));
+    }
 }
