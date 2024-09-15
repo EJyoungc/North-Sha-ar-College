@@ -66,7 +66,7 @@
           <div class="container">
             <div class="row">
               <div class="col-md-8 text-left">
-                <p>&copy; 2023 <a href="#">North Sha’ar College of Education</a>. All Rights Reserved. Designed &amp; Developed with <i class="icon icon-heart"></i> by <a href="#">Netraid</a></p>
+                <p>&copy; 2023 <a href="#">North Sha’ar College of Education</a>. All Rights Reserved. Designed &amp; Developed with <i class="icon icon-heart"></i> by <a href="https://web.facebook.com/tlink360">Techlink360</a></p>
               </div>
               <div class="col-md-4 probootstrap-back-to-top">
                 <p><a href="#" class="js-backtotop">Back to top <i class="icon-arrow-long-up"></i></a></p>
