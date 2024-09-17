@@ -47,7 +47,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ route('root') }}" title="ProBootstrap:lorem">lorem</a> 
+                <a class="navbar-brand" href="{{ route('root') }}">lorem</a> 
             </div>
 
             <div id="navbar-collapse" class="navbar-collapse collapse">
